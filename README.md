@@ -5,41 +5,41 @@ A machine learning regression engine developed to automate the assignment of loa
 
 🛠️ Technical Stack
     
-    Language: Python
+Language: Python
     
-    Libraries: NumPy, Pandas, Scikit-learn, Matplotlib, Joblib
+Libraries: NumPy, Pandas, Scikit-learn, Matplotlib, Joblib
     
-    Model: Linear Regression (Standardized)
+Model: Linear Regression (Standardized)
     
-    Deployment: Serialized Pickle files (.pkl) for real-time inference
+Deployment: Serialized Pickle files (.pkl) for real-time inference
 
 🏗️ Architecture & Features
 
-    The model predicts a fair interest rate based on the following borrower attributes:
+The model predicts a fair interest rate based on the following borrower attributes:
+
+Credit Score: Historical creditworthiness (300-850).
     
-    Credit Score: Historical creditworthiness (300-850).
+Annual Income: Total yearly earnings.
     
-    Annual Income: Total yearly earnings.
+Loan Amount: Total principal requested.
     
-    Loan Amount: Total principal requested.
-    
-    Loan-to-Income Ratio: A custom-engineered feature to measure borrower leverage.
+Loan-to-Income Ratio: A custom-engineered feature to measure borrower leverage.
 
 📈 Key Engineering Steps
 
-    Data Simulation: Generated a 1,000-sample dataset using NumPy with Gaussian noise to simulate real-world financial volatility.
+Data Simulation: Generated a 1,000-sample dataset using NumPy with Gaussian noise to simulate real-world financial volatility.
     
-    Feature Engineering: Engineered a loan_to_income_ratio to capture non-linear risk relationships.
+Feature Engineering: Engineered a loan_to_income_ratio to capture non-linear risk relationships.
     
-    Standardization: Applied StandardScaler to ensure features with different units (e.g., $200,000 income vs. 800 credit score) were weighted fairly by the model.
+Standardization: Applied StandardScaler to ensure features with different units (e.g., $200,000 income vs. 800 credit score) were weighted fairly by the model.
     
-    Guardrail Implementation: Developed a post-processing layer using np.clip to enforce business logic (interest rate floors and ceilings).
+Guardrail Implementation: Developed a post-processing layer using np.clip to enforce business logic (interest rate floors and ceilings).
 
 📊 Performance Metrics
 
-    R² Score: 0.92+ (Explains over 92% of the variance in interest rates).
-    
-    Mean Squared Error (MSE): Low error rate indicating high precision against ground-truth formulas.
+R² Score: 0.92+ (Explains over 92% of the variance in interest rates).
+
+Mean Squared Error (MSE): Low error rate indicating high precision against ground-truth formulas.
 
 
 🚀 How to Run
@@ -54,3 +54,19 @@ Install dependencies:
 Run the Interactive Inference Tool:
 
     python finance_model.py
+
+📂 Repository Structure
+finance_model.py: The complete training and inference pipeline.
+
+loan_model.pkl: The trained and serialized Linear Regression model.
+
+scaler.pkl: The fitted StandardScaler object for data normalization.
+
+README.md: Project documentation.
+
+🎓 Learning Outcomes
+Understood the impact of Data Leakage and how to avoid it.
+
+Mastered the Train-Test Split methodology for unbiased evaluation.
+
+Learned to handle Out-of-Distribution data through inference-level guardrails.

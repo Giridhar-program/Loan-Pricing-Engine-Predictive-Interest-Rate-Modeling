@@ -40,3 +40,17 @@ A machine learning regression engine developed to automate the assignment of loa
     R² Score: 0.92+ (Explains over 92% of the variance in interest rates).
     
     Mean Squared Error (MSE): Low error rate indicating high precision against ground-truth formulas.
+
+
+🚀 How to Run
+Clone the repository:
+
+    git clone https://github.com/your-username/loan-pricing-engine.git
+
+Install dependencies:
+
+    pip install numpy pandas scikit-learn joblib
+
+Run the Interactive Inference Tool:
+
+    python finance_model.py
